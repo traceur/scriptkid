@@ -244,12 +244,12 @@ function main() {
 	fi
 	SUPERVISORD_BIN=`which supervisord`
 	
-	mkdir -p /srv/app
-	cd /srv/app
+	mkdir -p /soft/scan
+	cd /soft/scan
 	git clone https://github.com/ring04h/thorns.git
 	HOSTNAME=`hostname -s`
-	sed -i "s/\[program:scanclient\]/[program:scanclient_${HOSTNAME}]/g" /srv/app/thorns/src/supervisord_client.conf
-	${SUPERVISORD_BIN} -c /srv/app/thorns/src/supervisord_client.conf
+	sed -i "s/\[program:scanclient\]/[program:scanclient_${HOSTNAME}]/g" /soft/scan/thorns/src/supervisord_client.conf
+	${SUPERVISORD_BIN} -c /soft/scan/thorns/src/supervisord_client.conf
  }
  
 #install all soft
