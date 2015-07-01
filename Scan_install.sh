@@ -246,7 +246,7 @@ function main() {
 	
 	mkdir -p /soft/scan
 	cd /soft/scan
-	git clone https://github.com/ring04h/thorns.git
+	git clone https://github.com/traceur/thorns.git
 	HOSTNAME=`hostname -s`
 	sed -i "s/\[program:scanclient\]/[program:scanclient_${HOSTNAME}]/g" /soft/scan/thorns/src/supervisord_client.conf
 	${SUPERVISORD_BIN} -c /soft/scan/thorns/src/supervisord_client.conf
